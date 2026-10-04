@@ -44,7 +44,7 @@ if st.button("献立と買い物リストを作成", type="primary"):
         with st.spinner("栄養バランスと予算を計算しながら献立を作成中..."):
             try:
                 genai.configure(api_key=api_key)
-                model = genai.GenerativeModel("gemini-1.5-flash")
+                model = genai.GenerativeModel("gemini-1.5-flash-latest")
 
                 pref_text = "、".join(preferences) if preferences else "特になし"
                 ing_text = ingredients if ingredients else "特になし（自由に必要な食材を提案してください）"
