@@ -5,7 +5,10 @@ st.set_page_config(page_title="献立＆買い物リスト生成", layout="cente
 
 st.title("🍳 節約・献立プランナー")
 
-with st.sidebar:
+if "GEMINI_API_KEY" in st.secrets:
+  api_key = st.secrets["GEMINI_API_KEY"]
+else:
+  with st.sidebar:
     st.header("設定")
     api_key = st.text_input("Gemini API Key", type="password")
 
